@@ -1,0 +1,11 @@
+x = 10
+y = 3
+toplam = x + y * 2
+
+if toplam > 15 {
+    sonuc = toplam * 2
+} else {
+    sonuc = toplam - y
+}
+
+oran = sonuc / y
