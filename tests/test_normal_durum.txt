@@ -1,0 +1,15 @@
+# =============================================================
+# SENARYO 1: Normal Çalışma Durumu
+# Amaç: Değişken atama, işlem önceliği ve if-else dallanması
+# =============================================================
+
+x = 10
+y = 3
+toplam = x + y * 2
+fark = x - y
+
+if toplam > 15 {
+    sonuc = toplam * 2
+} else {
+    sonuc = fark
+}

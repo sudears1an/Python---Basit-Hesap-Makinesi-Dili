@@ -2,7 +2,7 @@
 # Ders: Programlama Dilleri Prensipleri
 # Öğrenci: Sude Arslan
 # Numara:  2230656055
-# Ödev No: 1
+# Ödev No: 142
 # Tarih:   16.05.2026
 # =========================================================
 # Açıklama: Projenin Tkinter tabanlı Grafik Kullanıcı Arayüzü.

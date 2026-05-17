@@ -1,0 +1,8 @@
+# =============================================================
+# SENARYO 2: Sınır Durum (Boundary Case)
+# Amaç: Sıfıra bölme hatasının (ZeroDivisionError) yakalanması
+# =============================================================
+
+pay = 100
+payda = 0
+sonuc = pay / payda

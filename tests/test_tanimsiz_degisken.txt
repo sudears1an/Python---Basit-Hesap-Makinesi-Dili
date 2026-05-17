@@ -1,0 +1,7 @@
+# =============================================================
+# SENARYO 3: Hata Durumu (Error Case)
+# Amaç: Tanımlanmamış değişken çağrısında NameError fırlatılması
+# =============================================================
+
+a = 5
+b = a + tanimsiz_degisken

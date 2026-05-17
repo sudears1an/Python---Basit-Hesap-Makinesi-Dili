@@ -35,24 +35,20 @@ Proje Adı   : Değişken ve Koşul Destekli Hesap Makinesi Yorumlayıcısı
 
 4. ÇALIŞTIRMA KOMUTLARI
 -----------------------
-Projenin kök dizinindeyken (`2230656055_Sude_Arslan/` klasörünün içindeyken) 
-terminal veya PowerShell üzerinden şu komutlar koşturulabilir:
+Projenin kök dizinindeyken terminal veya PowerShell üzerinden "src" klasörünün 
+içine geçilerek şu komutlar koşturulabilir:
 
 * Grafik Kullanıcı Arayüzünü (GUI / IDE) Başlatmak İçin (Önerilen):
-  python src/main.py --gui
+  cd src
+  python gui.py
 
-* Otomatik Test Senaryolarını Koşturmak İçin:
-  python src/main.py --test
-
-* İnteraktif REPL (Terminal) Modunu Başlatmak İçin:
-  python src/main.py --repl
-
-* Bir Kaynak Kod Dosyasını (.mini) Doğrudan Çalıştırmak İçin:
-  python src/main.py ornek.mini
+* Alternatif Konsol / Terminal Modu Çalıştırma (Varsa):
+  cd src
+  python main.py
 
 5. ÖRNEK KULLANIM VE BEKLENEN ÇIKTI
 -----------------------------------
-Arayüzdeki editöre veya REPL moduna şu kod bloğu girildiğinde:
+Arayüzdeki editöre şu kod bloğu girildiğinde:
   x = 10
   y = 3
   toplam = x + y * 2
@@ -77,16 +73,20 @@ Beklenen Çıktı (Değişken Hafızası Durumu):
   (>, <, ==) destekler; ancak 'and' veya 'or' gibi bağlaçlarla iki koşulu 
   aynı anda bağlama özelliği (Örn: if x > 5 and y < 10) bu sürümde eksiktir.
 
-7. DİZİN VE DOSYA YAPISI
-------------------------
-├── src/                      # Projenin tüm kaynak kodları
+7. ZORUNLU RESMİ DİZİN VE DOSYA YAPISI
+--------------------------------------
+├── src/                      # Tüm kaynak kod dosyaları klasörü
 │   ├── lexer.py              # Sözcüksel Analizci (Token üretimi)
 │   ├── parser_ast.py         # Sözdizimsel Analizci (AST Yapısı)
 │   ├── interpreter.py        # Yürütücü (Hafıza yönetimi ve hesaplama)
 │   ├── gui.py                # Modern Geliştirici Arayüzü (IDE)
 │   └── main.py               # Ana Giriş ve Yönetim Modülü
-├── docs/                     # BNF Grameri ve Akademik Proje Raporu
-├── screenshots/              # Çalışma anına dair ekran görüntüleri
-├── ornek.mini                # Test amaçlı örnek script dosyası
-└── README.txt                # Bu bilgilendirme dökümanı
+├── docs/                     # Açıklama ve akademik rapor dosyaları
+│   ├── 2230656055_Sude_Arslan_Proje_Raporu.docx
+│   └── proje_mimari.svg      # Sistem mimari akış şeması
+├── tests/                    # Örnek hazır test senaryoları kodları
+│   ├── test_normal_durum.txt
+│   ├── test_sifira_bolme.txt
+│   └── test_tanimsiz_degisken.txt
+└── README.txt                # Bu bilgilendirme ve çalıştırma dökümanı
 ======================================================================
