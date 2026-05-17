@@ -1,0 +1,31 @@
+======================================================================
+Mini Hesap Makinesi Dili - Backus-Naur Form (BNF) Gramer Kuralları
+======================================================================
+
+<program>        ::= <deyim_listesi> EOF
+<deyim_listesi>  ::= <deyim> | <deyim> <deyim_listesi>
+<deyim>          ::= <atama_deyimi> | <kosul_deyimi> | <ifade>
+
+<atama_deyimi>   ::= DEGISKEN ATAMA <ifade>
+<kosul_deyimi>   ::= IF <ifade> LBRACE <deyim_listesi> RBRACE <else_blogu>
+<else_blogu>     ::= ELSE LBRACE <deyim_listesi> RBRACE | ε
+
+<ifade>          ::= <toplam> ( ( BUYUK | KUCUK | ESIT ) <toplam> )*
+<toplam>         ::= <carpim> ( ( ARTI | EKSI ) <carpim> )*
+<carpim>         ::= <birincil> ( ( CARP | BOL ) <birincil> )*
+
+<birincil>       ::= SAYI | DEGISKEN | LPAREN <ifade> RPAREN
+
+======================================================================
+Gramer Açıklamaları ve Öncelik Yönetimi (Precedence):
+----------------------------------------------------------------------
+1. İşlem Önceliği: Gramerde <carpim> kuralı, <toplam> kuralının altında 
+   tanımlandığı için özyinelemeli iniş (recursive descent) algoritmasında 
+   çarpma ve bölme işlemleri toplama/çıkarmaya göre daha derin düğümlerde 
+   çözülür. Bu durum matematiksel işlem önceliğini (Aritmetik Precedence) 
+   doğal olarak sağlar.
+2. Sol İlişkilendirme (Left-Associativity): Yıldız (*) ile belirtilen 
+   döngüsel yapılar, işlemlerin soldan sağa doğru ağaca eklenmesini garanti eder.
+3. Küme Parantezleri: İf-else bloklarının sınırları LBRACE ({) ve RBRACE (}) 
+   sembolleri ile katı bir şekilde çizilmiştir.
+======================================================================
