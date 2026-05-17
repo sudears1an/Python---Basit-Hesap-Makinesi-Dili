@@ -92,6 +92,7 @@ class UygulamaGUI:
     """
 
     def __init__(self, kok: tk.Tk) -> None:
+        """Uygulama penceresini başlatır, bileşenleri oluşturur ve başlangıç durumunu yükler."""
         self.kok         = kok
         # Aynı interpreter nesnesi tüm çalıştırmalar boyunca yaşar;
         # değişkenler birikimli olarak saklanır.

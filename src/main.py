@@ -75,12 +75,14 @@ def kaynak_kodu_calistir(kaynak_kod: str, interpreter: Interpreter):
 # ===========================================================================
 
 def senaryo_ayirici(baslik: str) -> None:
+    """Test senaryosu başlığını ayıran ve kolay okunabilir hale getiren yardımcı fonksiyon."""
     print("\n" + "=" * 60)
     print(f"  TEST: {baslik}")
     print("=" * 60)
 
 
 def test_normal_calisma() -> None:
+    """Normal çalışma senaryosunu çalıştırır ve beklenen değişken değerlerini doğrular."""
     senaryo_ayirici("Normal Çalışma (Değişken, Aritmetik, if/else)")
     kaynak = """
 x = 10
@@ -110,6 +112,7 @@ if toplam > 15 {
 
 
 def test_sinir_durum_sifira_bolme() -> None:
+    """Sıfıra bölme hatası durumunu test eder ve yorumlayıcının hatayı yakaladığını doğrular."""
     senaryo_ayirici("Sınır Durum — Sıfıra Bölme (ZeroDivisionError)")
     kaynak = """
 pay = 100
@@ -126,6 +129,7 @@ sonuc = pay / payda
 
 
 def test_hata_durumu_tanimsiz_degisken() -> None:
+    """Tanımsız değişken kullanımını test eder ve NameError çıktısını doğrular."""
     senaryo_ayirici("Hata Durumu — Tanımlanmamış Değişken (NameError)")
     kaynak = """
 a = 5
@@ -143,6 +147,7 @@ b = a + tanimsiz_degisken
 
 
 def tum_testleri_calistir() -> None:
+    """Hazır test senaryolarını ardışık olarak çalıştırır ve sonuçları ekrana yazar."""
     print("\n" + "#" * 60)
     print("  MİNİ INTERPRETER — OTOMATİK TEST PAKETİ")
     print("#" * 60)
@@ -161,6 +166,7 @@ def tum_testleri_calistir() -> None:
 # ===========================================================================
 
 def dosya_modunda_calistir(dosya_yolu: str) -> None:
+    """Komut satırından verilen kaynak dosyayı okur, çalıştırır ve sonuçları ekrana yazar."""
     try:
         with open(dosya_yolu, "r", encoding="utf-8") as dosya:
             kaynak_kod = dosya.read()
@@ -191,6 +197,7 @@ def dosya_modunda_calistir(dosya_yolu: str) -> None:
 # ===========================================================================
 
 def repl_modunu_baslat() -> None:
+    """Etkileşimli REPL modunu başlatır; kullanıcı girdiğini anında işler."""
     print("=" * 60)
     print("  Mini Interpreter — REPL Modu")
     print("  Çıkmak için: 'çık' veya 'exit' yazın.")
